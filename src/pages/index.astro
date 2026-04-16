@@ -1,5 +1,9 @@
 ---
+import "../styles/global.css";
 
+const siteTitle = "Zenith Robotics";
+const siteDescription =
+	"Zenith Robotics is where robots, systems, and builders grow together.";
 ---
 
 <html lang="en">
@@ -7,11 +11,156 @@
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title>{siteTitle}</title>
+		<meta name="description" content={siteDescription} />
+		<meta name="theme-color" content="#0b0d12" />
+		<meta property="og:title" content={siteTitle} />
+		<meta property="og:description" content={siteDescription} />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="https://zenithrobo.github.io/" />
+		<meta property="og:image" content="/favicon.svg" />
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={siteTitle} />
+		<meta name="twitter:description" content={siteDescription} />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap"
+			rel="stylesheet"
+		/>
 	</head>
 	<body>
-		<h1>Astro</h1>
+		<header class="border-grid sticky top-0 z-20 backdrop-blur-sm">
+			<div class="mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-4 md:px-10">
+				<a href="#top" class="inline-flex items-center gap-3 text-sm font-semibold tracking-wide text-zinc-100">
+					<span class="z-mark" aria-hidden="true"></span>
+					<span>ZENITH ROBOTICS</span>
+				</a>
+				<nav class="hidden items-center gap-8 text-sm text-zinc-300 md:flex" aria-label="Primary">
+					<a href="#build" class="nav-link">Mission</a>
+					<a href="#projects" class="nav-link">Projects</a>
+					<a href="#community" class="nav-link">Community</a>
+					<a href="#about" class="nav-link">About</a>
+				</nav>
+				<a
+					href="https://github.com/zenithrobo"
+					target="_blank"
+					rel="noreferrer"
+					class="btn btn-outline hidden md:inline-flex"
+				>
+					GitHub
+				</a>
+			</div>
+		</header>
+
+		<main id="top" class="mx-auto w-full max-w-6xl px-6 pb-16 pt-12 md:px-10 md:pt-20">
+			<section class="grid items-center gap-10 pb-24 md:grid-cols-2 md:pb-32" aria-labelledby="hero-title">
+				<div class="reveal">
+					<p class="eyebrow">Independent engineering initiative</p>
+					<h1 id="hero-title" class="mt-4 text-5xl font-bold leading-tight tracking-tight text-white md:text-7xl">
+						Zenith Robotics
+					</h1>
+					<p class="mt-6 max-w-xl text-lg leading-relaxed text-zinc-300 md:text-xl">
+						Where robots, systems, and builders grow together.
+					</p>
+					<div class="mt-10 flex flex-wrap gap-4">
+						<a href="#projects" class="btn btn-primary">View Projects</a>
+						<a href="https://github.com/zenithrobo" target="_blank" rel="noreferrer" class="btn btn-outline">
+							GitHub
+						</a>
+					</div>
+				</div>
+				<div class="reveal delay-1">
+					<div class="hero-panel" role="img" aria-label="Zenith Robotics angular Z technical mark">
+						<div class="hero-panel-grid"></div>
+						<div class="z-mark z-mark-hero" aria-hidden="true"></div>
+					</div>
+				</div>
+			</section>
+
+			<section id="build" class="pb-24 md:pb-32" aria-labelledby="build-title">
+				<div class="reveal">
+					<h2 id="build-title" class="section-title">What We Build</h2>
+					<p class="section-subtitle">Building robots, systems, and communities.</p>
+				</div>
+				<div class="mt-10 grid gap-5 md:grid-cols-3">
+					<article class="card reveal delay-1">
+						<h3 class="card-title">Robots</h3>
+						<p class="card-body">Machines that interact with the real world.</p>
+					</article>
+					<article class="card reveal delay-2">
+						<h3 class="card-title">Systems</h3>
+						<p class="card-body">Control, autonomy, software, and engineering tools.</p>
+					</article>
+					<article class="card reveal delay-3">
+						<h3 class="card-title">Communities</h3>
+						<p class="card-body">Supporting builders, teams, and collaboration.</p>
+					</article>
+				</div>
+			</section>
+
+			<section id="projects" class="pb-24 md:pb-32" aria-labelledby="projects-title">
+				<div class="reveal">
+					<h2 id="projects-title" class="section-title">Selected Projects</h2>
+					<p class="section-subtitle">Open engineering work published through GitHub.</p>
+				</div>
+				<div class="mt-10 grid gap-5 sm:grid-cols-2">
+					<!-- <a class="project-card reveal delay-1" href="https://github.com/zenithrobo" target="_blank" rel="noreferrer">
+						<h3>Motion Planning</h3>
+						<p>Trajectory generation and practical path planning experiments.</p>
+					</a>
+					<a class="project-card reveal delay-2" href="https://github.com/zenithrobo" target="_blank" rel="noreferrer">
+						<h3>Control Stack</h3>
+						<p>Real-time control architecture for reliable robotic behaviors.</p>
+					</a>
+					<a class="project-card reveal delay-3" href="https://github.com/zenithrobo" target="_blank" rel="noreferrer">
+						<h3>Robotics Tools</h3>
+						<p>Developer tooling for testing, simulation, and integration.</p>
+					</a>
+					<a class="project-card reveal delay-3" href="https://github.com/zenithrobo" target="_blank" rel="noreferrer">
+						<h3>Open Hardware Experiments</h3>
+						<p>Physical prototypes and iterative hardware design studies.</p>
+					</a> -->
+				</div>
+			</section>
+
+			<section id="community" class="pb-24 md:pb-32" aria-labelledby="community-title">
+				<div class="reveal">
+					<h2 id="community-title" class="section-title">Supporting Builders</h2>
+					<p class="section-subtitle">Zenith Robotics supports student robotics teams, builders, and engineering communities through sponsorship, tools, and collaboration.</p>
+				</div>
+				<div class="mt-10 grid gap-5 sm:grid-cols-2">
+					<a class="project-card reveal delay-1" href="https://github.com/zenithrobo" target="_blank" rel="noreferrer">
+						<h3>Supported Teams</h3>
+						<p>FRC Team 6399; RoboMaster SYSU</p>
+					</a>
+					<a class="project-card reveal delay-2" href="https://github.com/zenithrobo" target="_blank" rel="noreferrer">
+						<h3>Supported Individuals</h3>
+						<p>TBA</p>
+					</a>
+				</div>
+			</section>
+
+			<section id="about" class="pb-20" aria-labelledby="about-title">
+				<div class="reveal">
+					<h2 id="about-title" class="section-title">More About Us</h2>
+					<p class="section-copy">
+						Zenith Robotics is an independent engineering initiative focused on robotics, systems, and builder communities. Built with a long-term mindset.
+					</p>
+				</div>
+			</section>
+		</main>
+
+		<footer class="border-grid">
+			<div class="mx-auto flex w-full max-w-6xl flex-col gap-4 px-6 py-8 text-sm text-zinc-400 md:flex-row md:items-center md:justify-between md:px-10">
+				<p>© Zenith Robotics</p>
+				<nav class="flex items-center gap-6" aria-label="Footer">
+					<a href="https://github.com/zenithrobo" target="_blank" rel="noreferrer" class="footer-link">GitHub</a>
+					<!-- <a href="mailto:contact@zenithrobo.dev" class="footer-link">Contact</a> -->
+				</nav>
+			</div>
+		</footer>
 	</body>
 </html>
