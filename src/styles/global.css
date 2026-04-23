@@ -258,6 +258,10 @@ a {
 }
 
 @media (max-width: 767px) {
+	.hero-visual {
+		display: none;
+	}
+
 	.hero-panel {
 		height: 290px;
 	}
